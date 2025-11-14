@@ -38,6 +38,7 @@ signature/
 **\*.db
 **\*.sqlite
 .idea/
+utils/RTDPointCatalog.db
 utils/RTDPointCatalog_2022_1.db
 utils/RTDPointCatalog_2023_0.db
 utils/RTDPointCatalog_2023_1.db
