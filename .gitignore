@@ -39,6 +39,7 @@ signature/
 **\*.sqlite
 .idea/
 .vscode/
+Frame Requests.db
 utils/RTDPointCatalog.db
 utils/RTDPointCatalog_2022_1.db
 utils/RTDPointCatalog_2023_0.db
