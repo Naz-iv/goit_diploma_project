@@ -38,6 +38,13 @@ signature/
 *.db
 *.sqlite
 .idea/
+utils/RTDPointCatalog_2022_1.db
+utils/RTDPointCatalog_2023_0.db
+utils/RTDPointCatalog_2023_1.db
+utils/RTDPointCatalog_2025_0.db
+utils/RTDPointCatalog_2026_0.sqlite
+utils/HSPM 2023.0
+
 
 
 # Installer logs
