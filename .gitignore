@@ -35,8 +35,8 @@ MANIFEST
 #project hiden code
 frame_builder/
 signature/
-*.db
-*.sqlite
+**\*.db
+**\*.sqlite
 .idea/
 utils/RTDPointCatalog_2022_1.db
 utils/RTDPointCatalog_2023_0.db
