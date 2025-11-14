@@ -36,8 +36,8 @@ MANIFEST
 frame_builder/
 signature/
 *.db
-*.sql3
 *.sqlite
+.idea/
 
 
 # Installer logs
