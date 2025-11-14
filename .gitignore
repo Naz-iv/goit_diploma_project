@@ -33,8 +33,11 @@ MANIFEST
 *.spec
 
 #project hiden code
-frame_builder
-signature
+frame_builder/
+signature/
+*.db
+*.sql3
+*.sqlite
 
 
 # Installer logs
