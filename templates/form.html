@@ -1,0 +1,66 @@
+<form id="frameForm" enctype="multipart/form-data">
+    <label>ROP:</label><br>
+    <input type="number" name="ROP" step="0.01"><br>
+    <label>Bitrate:</label><br>
+    <input type="number" name="Bitrate" step="0.01"><br>
+    <label>Tools Count (optional, overridden by JSON if uploaded):</label><br>
+    <input type="number" name="ToolCount"><br>
+    <label>Job Number / UID (optional, overridden by JSON if uploaded):</label><br>
+    <input type="text" name="UID"><br>
+    <label>Upload JSON file:</label><br>
+    <input type="file" name="json_file" accept=".json"><br><br>
+    <button type="submit">Submit Request</button>
+</form>
+
+<script>
+document.getElementById("frameForm").addEventListener("submit", async function(e) {
+    e.preventDefault(); // Stop default form submission
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const fileInput = form.querySelector('input[name="json_file"]');
+    if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const text = await file.text();
+        let jsonData;
+        try {
+            jsonData = JSON.parse(text);
+        } catch (err) {
+            alert("Invalid JSON file!");
+            return;
+        }
+
+        // Extract UID (Job Number)
+        if (jsonData["JOB NUMBER"]) {
+            formData.set("UID", jsonData["JOB NUMBER"]);
+        }
+
+        // Count tools
+        if (Array.isArray(jsonData.TOOLS)) {
+            formData.set("ToolCount", jsonData.TOOLS.length);
+        }
+
+        // Optionally, extract ROP and Bitrate if present in JSON
+        if (jsonData.ROP) formData.set("ROP", jsonData.ROP);
+        if (jsonData.Bitrate) formData.set("Bitrate", jsonData.Bitrate);
+
+        // Optional: attach full JSON as a string if backend needs it
+        formData.set("full_json", JSON.stringify(jsonData));
+    }
+
+    // Send form data to FastAPI
+    const response = await fetch("/request_frames", {
+        method: "POST",
+        body: formData
+    });
+
+    if (response.ok) {
+        const result = await response.json();
+        console.log(result);
+        alert("Response: " + JSON.stringify(result, null, 2));
+    } else {
+        alert("Error: " + response.status);
+    }
+});
+</script>

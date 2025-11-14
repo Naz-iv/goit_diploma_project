@@ -1,0 +1,46 @@
+{
+  "azureFunctions.deploySubpath": ".",
+  "azureFunctions.scmDoBuildDuringDeployment": true,
+  "azureFunctions.pythonVenv": ".venv",
+  "azureFunctions.projectLanguage": "Python",
+  "azureFunctions.projectRuntime": "~4",
+  "debug.internalConsoleOptions": "neverOpen",
+  "azureFunctions.projectLanguageModel": 2,
+  "containerApps.deploymentConfigurations": [
+    {
+      "label": "frame-generator",
+      "type": "AcrDockerBuildRequest",
+      "dockerfilePath": "Dockerfile",
+      "srcPath": ".",
+      "envPath": "",
+      "resourceGroup": "frame-generator",
+      "containerApp": "frame-generator",
+      "containerRegistry": "framegenerator2ab643"
+    },
+    {
+      "label": "frame-generator",
+      "type": "AcrDockerBuildRequest",
+      "dockerfilePath": "Dockerfile",
+      "srcPath": ".",
+      "envPath": "",
+      "resourceGroup": "frame-generator",
+      "containerApp": "frame-generator",
+      "containerRegistry": "framegenerator2ab643"
+    },
+    {
+      "label": "frame-generator",
+      "type": "AcrDockerBuildRequest",
+      "dockerfilePath": "Dockerfile",
+      "srcPath": ".",
+      "envPath": "",
+      "resourceGroup": "FrameGenerator",
+      "containerApp": "frame-generator",
+      "containerRegistry": "framegenerator6cf18e"
+    }
+  ],
+  "python.testing.pytestArgs": [
+    "test"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
+}

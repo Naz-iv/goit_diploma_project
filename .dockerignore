@@ -1,0 +1,6 @@
+local.settings.json
+
+.vscode
+.idea
+.venv
+test

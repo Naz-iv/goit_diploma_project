@@ -1,0 +1,4 @@
+version	values
+150	"d_incl,d_azimuth,d_dip,d_gmag,d_hmag,d_tf"
+160	"d_incl_hr,d_azimuth_hr,d_dip_hr,d_gmag,d_hmag,d_tf"
+170	"d_incl_hr,d_azimuth_hr,d_dip_hr,d_gmag,d_hmag,d_tf"

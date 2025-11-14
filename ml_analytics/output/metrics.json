@@ -1,0 +1,12 @@
+{
+  "total_requests": 992,
+  "success_rate_pct": 89.31,
+  "error_rate_pct": 10.58,
+  "avg_duration_min": 10.953326612903227,
+  "avg_tool_count": 4.0,
+  "most_common_device": [
+    "ARC6",
+    "PD",
+    "TELE"
+  ]
+}

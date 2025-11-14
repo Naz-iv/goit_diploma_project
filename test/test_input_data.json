@@ -1,0 +1,1715 @@
+{
+    "uid": "23eeff6d-6b19-4143-b385-56f00df7a6c9",
+    "job_number": "O.1012030.10",
+    "well_name": "TEST",
+    "section_size": "12.25in",
+    "fsl1": {
+        "description": "Main",
+        "bitrate": 60,
+        "rop": 30,
+        "nonorion_update": 1,
+        "orion_update": 6,
+        "R1_block": 31,
+        "R1_space": 15,
+        "R2_block": 31,
+        "R2_space": 30,
+        "R3_block": 31,
+        "R3_space": 50,
+        "mtf": [
+            {
+                "name": "ANGXCMB_xcl",
+                "datpid": 22433,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel combined AngleX and source",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "CO_ITF_gdi",
+                "datpid": 11601,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Continuous Inertial Toolface",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "DCRNT_xcl",
+                "datpid": 22418,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel DC Current",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GDI_MODE_gdi",
+                "datpid": 11610,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "GDIS tool mode",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GRAVHP_xcl",
+                "datpid": 22434,
+                "length": 10,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel gamma ray average count rate (high precision)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GTEMP_xcl",
+                "datpid": 22396,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Accel. Temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "HVM_xcl",
+                "datpid": 22417,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Motor High Voltage",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "HV_xcl",
+                "datpid": 22416,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Tool High Voltage",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ITFSTAT_gdi",
+                "datpid": 11609,
+                "length": 11,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "ITF status word in GDIS",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RGX_xcl",
+                "datpid": 22421,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Continuous Gravity Vector X axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RHX_xcl",
+                "datpid": 22420,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Continuous magnetic Vector X axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ROPIDX_xcl",
+                "datpid": 22422,
+                "length": 3,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel ROP index",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTMODE_xcl",
+                "datpid": 22411,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel TF Repeating frame mode bits",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT_xcl",
+                "datpid": 22407,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Real Time Status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHCKRSK_gdi",
+                "datpid": 11605,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Shock risk in GDIS",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHOCK_xcl",
+                "datpid": 22381,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Real Time Shock Counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SRATIO_xcl",
+                "datpid": 22419,
+                "length": 4,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Steering ratio",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TFDES_xcl",
+                "datpid": 22408,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Desired Tool Face",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TFSTRVX_xcl",
+                "datpid": 22387,
+                "length": 10,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Steer mode vector (B9-B4 Angle), (B3-B0 Magnitude)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TF_xcl",
+                "datpid": 22409,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Actual ToolFace (mtf or gtf)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TOOLSTAT_gdi",
+                "datpid": 11607,
+                "length": 13,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "GDIS tool status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TRPM_xcl",
+                "datpid": 22413,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Turbine RPM",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "UTMODE_xcl",
+                "datpid": 22410,
+                "length": 5,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Utility frame mode bits",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "VIBLAT_xcl",
+                "datpid": 22382,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel RMS Lateral vibrations",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "VIBX_xcl",
+                "datpid": 22383,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel RMS X-axis vibrations",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "a_jam",
+                "datpid": 2501,
+                "length": 2,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Anti jam counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "di_temp",
+                "datpid": 2502,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "D&I temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "gamma",
+                "datpid": 2506,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Gamma ray",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "gy",
+                "datpid": 2507,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Rotating Accelerometer Y",
+                "time": 240,
+                "depth": null
+            },
+            {
+                "name": "gz",
+                "datpid": 2508,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Rotating Accelerometer Z",
+                "time": 240,
+                "depth": null
+            },
+            {
+                "name": "hy",
+                "datpid": 2509,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Rotating Magnetometer Y",
+                "time": 240,
+                "depth": null
+            },
+            {
+                "name": "hz",
+                "datpid": 2510,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Rotating Magnetometer Z",
+                "time": 240,
+                "depth": null
+            },
+            {
+                "name": "i_motor",
+                "datpid": 2612,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP modulator motor current",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ltbrt",
+                "datpid": 2621,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP LTB reties counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "mwdstat",
+                "datpid": 2541,
+                "length": 6,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP RealTime status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "rgx",
+                "datpid": 2513,
+                "length": 12,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Rotating Accelerometer X",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "rhx",
+                "datpid": 2516,
+                "length": 12,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Rotating Magnetometer X",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "shock_i",
+                "datpid": 2522,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Real Time Shock Counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "tur_rpm",
+                "datpid": 2505,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP turbine RPM",
+                "time": null,
+                "depth": null
+            }
+        ],
+        "gtf": [
+            {
+                "name": "ANGXCMB_xcl",
+                "datpid": 22433,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel combined AngleX and source",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "CO_ITF_gdi",
+                "datpid": 11601,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Continuous Inertial Toolface",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "DCRNT_xcl",
+                "datpid": 22418,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel DC Current",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GDI_MODE_gdi",
+                "datpid": 11610,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "GDIS tool mode",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GRAVHP_xcl",
+                "datpid": 22434,
+                "length": 10,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel gamma ray average count rate (high precision)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GTEMP_xcl",
+                "datpid": 22396,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Accel. Temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "HVM_xcl",
+                "datpid": 22417,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Motor High Voltage",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "HV_xcl",
+                "datpid": 22416,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Tool High Voltage",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ITFSTAT_gdi",
+                "datpid": 11609,
+                "length": 11,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "ITF status word in GDIS",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RGX_xcl",
+                "datpid": 22421,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Continuous Gravity Vector X axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RHX_xcl",
+                "datpid": 22420,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Continuous magnetic Vector X axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ROPIDX_xcl",
+                "datpid": 22422,
+                "length": 3,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel ROP index",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTMODE_xcl",
+                "datpid": 22411,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel TF Repeating frame mode bits",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT_xcl",
+                "datpid": 22407,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Real Time Status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHCKRSK_gdi",
+                "datpid": 11605,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Shock risk in GDIS",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHOCK_xcl",
+                "datpid": 22381,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Real Time Shock Counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SRATIO_xcl",
+                "datpid": 22419,
+                "length": 4,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Steering ratio",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TFDES_xcl",
+                "datpid": 22408,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Desired Tool Face",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TFSTRVX_xcl",
+                "datpid": 22387,
+                "length": 10,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Steer mode vector (B9-B4 Angle), (B3-B0 Magnitude)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TF_xcl",
+                "datpid": 22409,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Actual ToolFace (mtf or gtf)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TOOLSTAT_gdi",
+                "datpid": 11607,
+                "length": 13,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "GDIS tool status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TRPM_xcl",
+                "datpid": 22413,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Turbine RPM",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "UTMODE_xcl",
+                "datpid": 22410,
+                "length": 5,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Utility frame mode bits",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "VIBLAT_xcl",
+                "datpid": 22382,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel RMS Lateral vibrations",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "VIBX_xcl",
+                "datpid": 22383,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel RMS X-axis vibrations",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "a_jam",
+                "datpid": 2501,
+                "length": 2,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Anti jam counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "di_temp",
+                "datpid": 2502,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "D&I temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "gamma",
+                "datpid": 2506,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Gamma ray",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "gtf",
+                "datpid": 2536,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Gravity ToolFace",
+                "time": 60,
+                "depth": null
+            },
+            {
+                "name": "i_motor",
+                "datpid": 2612,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP modulator motor current",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ltbrt",
+                "datpid": 2621,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP LTB reties counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "mwdstat",
+                "datpid": 2541,
+                "length": 6,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP RealTime status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "rgx",
+                "datpid": 2513,
+                "length": 12,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Rotating Accelerometer X",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "rhx",
+                "datpid": 2516,
+                "length": 12,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Rotating Magnetometer X",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "shock_i",
+                "datpid": 2522,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Real Time Shock Counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "tur_rpm",
+                "datpid": 2505,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP turbine RPM",
+                "time": null,
+                "depth": null
+            }
+        ],
+        "rotary": [
+            {
+                "name": "ANGXCMB_xcl",
+                "datpid": 22433,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel combined AngleX and source",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "DCRNT_xcl",
+                "datpid": 22418,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel DC Current",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GDI_MODE_gdi",
+                "datpid": 11610,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "GDIS tool mode",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GRAVHP_xcl",
+                "datpid": 22434,
+                "length": 10,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel gamma ray average count rate (high precision)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GTEMP_xcl",
+                "datpid": 22396,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Accel. Temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "HVM_xcl",
+                "datpid": 22417,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Motor High Voltage",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "HV_xcl",
+                "datpid": 22416,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Tool High Voltage",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RGX_xcl",
+                "datpid": 22421,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Continuous Gravity Vector X axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RHX_xcl",
+                "datpid": 22420,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Continuous magnetic Vector X axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ROPIDX_xcl",
+                "datpid": 22422,
+                "length": 3,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel ROP index",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTMODE_xcl",
+                "datpid": 22411,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel TF Repeating frame mode bits",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT_xcl",
+                "datpid": 22407,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Real Time Status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHCKRSK_gdi",
+                "datpid": 11605,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Shock risk in GDIS",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHOCK_xcl",
+                "datpid": 22381,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Real Time Shock Counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SRATIO_xcl",
+                "datpid": 22419,
+                "length": 4,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Steering ratio",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TFDES_xcl",
+                "datpid": 22408,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Desired Tool Face",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TFSTRVX_xcl",
+                "datpid": 22387,
+                "length": 10,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Steer mode vector (B9-B4 Angle), (B3-B0 Magnitude)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TF_xcl",
+                "datpid": 22409,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Actual ToolFace (mtf or gtf)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TOOLSTAT_gdi",
+                "datpid": 11607,
+                "length": 13,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "GDIS tool status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TRPM_xcl",
+                "datpid": 22413,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Turbine RPM",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "UTMODE_xcl",
+                "datpid": 22410,
+                "length": 5,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Utility frame mode bits",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "VIBLAT_xcl",
+                "datpid": 22382,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel RMS Lateral vibrations",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "VIBX_xcl",
+                "datpid": 22383,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel RMS X-axis vibrations",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "a_jam",
+                "datpid": 2501,
+                "length": 2,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Anti jam counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "crpm",
+                "datpid": 2619,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Average MWD collar rpm",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "di_temp",
+                "datpid": 2502,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "D&I temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "gamma",
+                "datpid": 2506,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Gamma ray",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "i_motor",
+                "datpid": 2612,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP modulator motor current",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ltbrt",
+                "datpid": 2621,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP LTB reties counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "mwdstat",
+                "datpid": 2541,
+                "length": 6,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP RealTime status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "nrpm",
+                "datpid": 2898,
+                "length": 1,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "Negative rpm flag",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "rgx",
+                "datpid": 2513,
+                "length": 12,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Rotating Accelerometer X",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "rhx",
+                "datpid": 2516,
+                "length": 12,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Rotating Magnetometer X",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "shock_i",
+                "datpid": 2522,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Real Time Shock Counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "sticknslip",
+                "datpid": 2571,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "\"PowerUP Peak-Peak collar RPM variations, Stic Slip indicator\"",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "stuck",
+                "datpid": 2897,
+                "length": 2,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "Percent time stuck",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "tur_rpm",
+                "datpid": 2505,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP turbine RPM",
+                "time": null,
+                "depth": null
+            }
+        ]
+    },
+    "fsl2": {
+        "description": "",
+        "bitrate": 6,
+        "rop": 100,
+        "nonorion_update": 1,
+        "orion_update": 6,
+        "R1_block": null,
+        "R1_space": null,
+        "R2_block": null,
+        "R2_space": null,
+        "R3_block": null,
+        "R3_space": null,
+        "mtf": [],
+        "gtf": [],
+        "rotary": []
+    },
+    "fsl3": {
+        "description": "",
+        "bitrate": 6,
+        "rop": 100,
+        "nonorion_update": 1,
+        "orion_update": 6,
+        "R1_block": null,
+        "R1_space": null,
+        "R2_block": null,
+        "R2_space": null,
+        "R3_block": null,
+        "R3_space": null,
+        "mtf": [],
+        "gtf": [],
+        "rotary": []
+    },
+    "fsl4": {
+        "description": "",
+        "bitrate": 6,
+        "rop": 100,
+        "nonorion_update": 1,
+        "orion_update": 6,
+        "R1_block": null,
+        "R1_space": null,
+        "R2_block": null,
+        "R2_space": null,
+        "R3_block": null,
+        "R3_space": null,
+        "mtf": [],
+        "gtf": [],
+        "rotary": []
+    },
+    "fsl5": {
+        "description": "",
+        "bitrate": 6,
+        "rop": 100,
+        "nonorion_update": 1,
+        "orion_update": 6,
+        "R1_block": null,
+        "R1_space": null,
+        "R2_block": null,
+        "R2_space": null,
+        "R3_block": null,
+        "R3_space": null,
+        "mtf": [],
+        "gtf": [],
+        "rotary": []
+    },
+    "fsl6": {
+        "description": "",
+        "bitrate": 6,
+        "rop": 100,
+        "nonorion_update": 1,
+        "orion_update": 6,
+        "R1_block": null,
+        "R1_space": null,
+        "R2_block": null,
+        "R2_space": null,
+        "R3_block": null,
+        "R3_space": null,
+        "mtf": [],
+        "gtf": [],
+        "rotary": []
+    },
+    "utility": {
+        "description": "Main",
+        "bitrate": 8,
+        "rop": 60,
+        "utility": [
+            {
+                "name": "ACQ_DELAY_gdi",
+                "datpid": 11606,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Survey to acquisition delay GDIS",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ANGXCMB_xcl",
+                "datpid": 22433,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel combined AngleX and source",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ANGXPP_xcl",
+                "datpid": 22397,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel MWD Angle between G & H Perpendicular to Tool String",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "AZIM_N_gdi",
+                "datpid": 11556,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Static Azimuth",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "CO_ITF_gdi",
+                "datpid": 11601,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Continuous Inertial Toolface",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GDI_MODE_gdi",
+                "datpid": 11610,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "GDIS tool mode",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GOODSVYCNT_gdi",
+                "datpid": 11604,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Number of Good Survey per Station",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GTF_N_gdi",
+                "datpid": 11559,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Static Gravity Toolface",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "INCL_N_gdi",
+                "datpid": 11557,
+                "length": 15,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Static Inclination",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ITFSTAT_gdi",
+                "datpid": 11609,
+                "length": 11,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "ITF status word in GDIS",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "LAT_N_gdi",
+                "datpid": 11563,
+                "length": 15,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Latitude",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "NFSTAT_gdi",
+                "datpid": 11608,
+                "length": 13,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "GDIS NF survey statuus word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "QISG_AZIM_gdi",
+                "datpid": 11612,
+                "length": 11,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Wide range Quality Indicator Static Gyro high resolution",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "QISG_SITF_gdi",
+                "datpid": 11611,
+                "length": 10,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "GDI Static Gyro toolface (standard deviation)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ROPIDX_xcl",
+                "datpid": 22422,
+                "length": 3,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel ROP index",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SGX_N_gdi",
+                "datpid": 11594,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Static Gravity X axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SGX_xcl",
+                "datpid": 22389,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Survey Gravity X-axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SGY_N_gdi",
+                "datpid": 11595,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Static Gravity Y axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SGY_xcl",
+                "datpid": 22390,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Survey Gravity Y-axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SGZ_N_gdi",
+                "datpid": 11596,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Static Gravity Z axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SGZ_xcl",
+                "datpid": 22391,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Survey Gravity Z-axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHX_xcl",
+                "datpid": 22392,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Survey Magnetic X-axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHY_xcl",
+                "datpid": 22393,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Survey Magnetic Y-axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHZ_xcl",
+                "datpid": 22394,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Survey Magnetic Z-axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ST_ITF_gdi",
+                "datpid": 11600,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Stationary Inertial Toolface",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SVYCNT_gdi",
+                "datpid": 11603,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Number of Total Survey per Station",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SWX_N_gdi",
+                "datpid": 11578,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Static Omega X axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SWY_N_gdi",
+                "datpid": 11579,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Static Omega Y axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SWZ_N_gdi",
+                "datpid": 11580,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Static Omega Z axis",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TEMP_N_gdi",
+                "datpid": 11555,
+                "length": 15,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TOOLSTAT_gdi",
+                "datpid": 11607,
+                "length": 13,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "GDIS tool status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TOTALG_N_gdi",
+                "datpid": 11562,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Total Earth Gravity",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TOTALW_wr_gdi",
+                "datpid": 11613,
+                "length": 13,
+                "is_mwd": false,
+                "ltb_addr": 160,
+                "description": "Wide range Total omega Earth Rotation high resolution",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "UTMODE_xcl",
+                "datpid": 22410,
+                "length": 5,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Utility frame mode bits",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "UTSTAT_xcl",
+                "datpid": 22398,
+                "length": 7,
+                "is_mwd": false,
+                "ltb_addr": 253,
+                "description": "PD Xcel Tool Status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "a_jam",
+                "datpid": 2501,
+                "length": 2,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Anti jam counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "curedt",
+                "datpid": 2574,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP Current Equivalent Drilling Time in 10 Hours",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "di_temp",
+                "datpid": 2502,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "D&I temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "i_motor",
+                "datpid": 2612,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP modulator motor current",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "longfid",
+                "datpid": 4647,
+                "length": 10,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP long frame identifier",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ltbrt",
+                "datpid": 2621,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP LTB reties counter",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "mwdstat",
+                "datpid": 2541,
+                "length": 6,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP RealTime status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "tf",
+                "datpid": 2551,
+                "length": 9,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "PowerUP ToolFace with mtf/gtf indication",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "totalshock",
+                "datpid": 2899,
+                "length": 2,
+                "is_mwd": true,
+                "ltb_addr": 152,
+                "description": "Total shocks",
+                "time": null,
+                "depth": null
+            }
+        ]
+    },
+    "num_of_fsl": 1,
+    "odf_required": false,
+    "modf_required": false,
+    "provision_bha": false,
+    "ddr_bha": false,
+    "tools": [
+        {
+            "tool_id": "GDISTOOL",
+            "display_name": "GDIS",
+            "ltb_addr": 160,
+            "is_mwd": false,
+            "dpoint_suffix": "_gdi",
+            "version": "6.0",
+            "size": "8.25",
+            "tr_spacing": null,
+            "rt_blocksize": null
+        },
+        {
+            "tool_id": "PDXCELTOOL",
+            "display_name": "PDXCEL",
+            "ltb_addr": 253,
+            "is_mwd": false,
+            "dpoint_suffix": "_xcl",
+            "version": "2.0",
+            "size": "8.25",
+            "tr_spacing": null,
+            "rt_blocksize": null
+        },
+        {
+            "tool_id": "PUPTOOL",
+            "display_name": "TELE",
+            "ltb_addr": 152,
+            "is_mwd": true,
+            "dpoint_suffix": "",
+            "version": "140",
+            "size": null,
+            "tr_spacing": null,
+            "rt_blocksize": null
+        }
+    ],
+    "odf_frame": [],
+    "modf_frame": [],
+    "dds_frame": []
+}
