@@ -1,66 +1,238 @@
-<form id="frameForm" enctype="multipart/form-data">
-    <label>ROP:</label><br>
-    <input type="number" name="ROP" step="0.01"><br>
-    <label>Bitrate:</label><br>
-    <input type="number" name="Bitrate" step="0.01"><br>
-    <label>Tools Count (optional, overridden by JSON if uploaded):</label><br>
-    <input type="number" name="ToolCount"><br>
-    <label>Job Number / UID (optional, overridden by JSON if uploaded):</label><br>
-    <input type="text" name="UID"><br>
-    <label>Upload JSON file:</label><br>
-    <input type="file" name="json_file" accept=".json"><br><br>
-    <button type="submit">Submit Request</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frame Request Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            background: #2f3e9e;
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .header-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Form Container */
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: #444;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        input[type="file"] {
+            width: 95%;
+            padding: 5px 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #2f3e9e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e2c75;
+        }
+
+        /* Modal */
+        .modal {
+            display: none; /* hidden by default */
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .modal button {
+            width: auto;
+            margin: 10px 5px 0 5px;
+        }
+
+        .spinner {
+            border: 6px solid #eee;
+            border-top: 6px solid #2f3e9e;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg);}
+            100% { transform: rotate(360deg);}
+        }
+
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-title">Frame Generator</div>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Frame Request Form</h2>
+
+    <form id="frameForm" enctype="multipart/form-data" method="POST" action="/submit">
+        <label>ROP:</label>
+        <input type="number" name="rop" step="0.01" required>
+
+        <label>Bitrate:</label>
+        <input type="number" name="bitrate" step="0.01" required>
+
+        <label>Number of FSLs:</label>
+        <input type="number" name="num_fsls" required>
+
+        <label>Job Number:</label>
+        <input type="text" name="job_number" required>
+
+        <label>Upload JSON file:</label>
+        <input type="file" name="json_file" accept=".json" required>
+
+        <button type="submit">Submit Request</button>
+        <br>
+        <br>
+        <button type="button" id="recommendBtn">Get Recommended Parameters</button>    </form>
+
+    <div id="status" style="text-align:center; margin-top:20px;"></div>
+</div>
+
+<!-- Add this modal container somewhere in your HTML body -->
+<div id="recommendationModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+    <div style="background:white; padding:25px; border-radius:8px; width:350px; text-align:center; position:relative;">
+        <h3>Recommended Parameters</h3>
+        <p id="recROP"></p>
+        <p id="recBitrate"></p>
+
+        <h3>Estimated processing time</h3>
+        <p id="recTime"></p>
+        <button id="acceptRec" style="margin-right:10px;">Accept</button>
+        <br>
+        <br>
+        <button id="rejectRec">Reject</button>
+    </div>
+</div>
 
 <script>
-document.getElementById("frameForm").addEventListener("submit", async function(e) {
-    e.preventDefault(); // Stop default form submission
 
-    const form = e.target;
+const form = document.getElementById("frameForm");
+const statusDiv = document.getElementById("status");
+const recommendBtn = document.getElementById("recommendBtn");
+
+recommendBtn.addEventListener("click", async () => {
+    statusDiv.innerHTML = '<div class="spinner"></div> Getting recommendations...';
+
     const formData = new FormData(form);
-
-    const fileInput = form.querySelector('input[name="json_file"]');
-    if (fileInput.files.length > 0) {
-        const file = fileInput.files[0];
-        const text = await file.text();
-        let jsonData;
-        try {
-            jsonData = JSON.parse(text);
-        } catch (err) {
-            alert("Invalid JSON file!");
-            return;
-        }
-
-        // Extract UID (Job Number)
-        if (jsonData["JOB NUMBER"]) {
-            formData.set("UID", jsonData["JOB NUMBER"]);
-        }
-
-        // Count tools
-        if (Array.isArray(jsonData.TOOLS)) {
-            formData.set("ToolCount", jsonData.TOOLS.length);
-        }
-
-        // Optionally, extract ROP and Bitrate if present in JSON
-        if (jsonData.ROP) formData.set("ROP", jsonData.ROP);
-        if (jsonData.Bitrate) formData.set("Bitrate", jsonData.Bitrate);
-
-        // Optional: attach full JSON as a string if backend needs it
-        formData.set("full_json", JSON.stringify(jsonData));
-    }
-
-    // Send form data to FastAPI
-    const response = await fetch("/request_frames", {
+    const res = await fetch("/recommend", {
         method: "POST",
         body: formData
     });
+    const data = await res.json();
+    const taskId = data.task_id;
 
-    if (response.ok) {
-        const result = await response.json();
-        console.log(result);
-        alert("Response: " + JSON.stringify(result, null, 2));
-    } else {
-        alert("Error: " + response.status);
+    async function checkStatus() {
+        const res = await fetch(`/status/${taskId}`);
+        const statusData = await res.json();
+
+        if (statusData.status === "completed") {
+            showModal(statusData.result);
+            statusDiv.innerHTML = '';
+        } else {
+            setTimeout(checkStatus, 2000);
+        }
     }
+
+    checkStatus();
 });
+
+function showModal(result) {
+    const modal = document.getElementById("recommendationModal");
+
+    document.getElementById("recROP").textContent = `ROP: ${result.recommendation[0]}`;
+    document.getElementById("recBitrate").textContent = `Bitrate: ${result.recommendation[1]}`;
+    document.getElementById("recTime").textContent = `${result.expected_time} seconds`;
+
+    modal.style.display = "flex";
+
+    document.getElementById("acceptRec").onclick = () => {
+        form.querySelector("input[name='rop']").value = result.recommendation[0];
+        form.querySelector("input[name='bitrate']").value = result.recommendation[1];
+        modal.style.display = "none";   // ✔️ only fills form, no submit
+    };
+
+    document.getElementById("rejectRec").onclick = () => {
+        modal.style.display = "none";
+    };
+}
 </script>
+
+</body>
+</html>

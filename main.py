@@ -1,158 +1,166 @@
-import logging
-from fastapi import FastAPI, HTTPException
-from fastapi.responses import JSONResponse
-from typing import Dict
-from fastapi import FastAPI, Form, Request, UploadFile, File
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
-import requests
-import json
+import json, os
+import uuid
 
-from utils.db_managment import SQLHandler
-from signature.digital_signature import DigitalSignature
-from utils.utility import main
-from hspm_version_mapper import HSPM_VERSION_MAP
+from fastapi import FastAPI, Request, BackgroundTasks, File, UploadFile, Form
+from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+
+from utils.utility import request_frames
+from ml_recommendations.recommendation_module import get_recommender
 
 app = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
 
+# 🔥 Mount static directory
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 BACKEND_URL = "http://localhost:8000/request_frames"
 
-signer = DigitalSignature()
+TASKS = {}
 
-@app.post("/request_frames")
-async def request_frames(data: Dict):
-    uid = data.get("uid")
-    if not uid:
-        raise HTTPException(status_code=400, detail="UID is missing in the request.")
+def process_frame(task_id, data):
 
-    hspm_version_from_user = HSPM_VERSION_MAP.get(data.get("hspm_version"))
-    hspm_version = hspm_version_from_user if hspm_version_from_user else "default_db"
+    xml_string, status = request_frames(data)
+    global TASKS
 
-    try:
-        with SQLHandler(hspm_version) as db:
-            past_result = db.load_xml_from_sqlite(uid)
+    TASKS[task_id]["status"] = status
+    TASKS[task_id]["result"] = xml_string
 
-            if past_result is not None:
-                past_result, status = past_result
-                if past_result == "":
-                    return JSONResponse(
-                        status_code=503,
-                        content={"statusCode": 503, "xml": "",
-                                 "message": "Frame Generator was not able to build frame. Increase bit rate or reduce required update rates."}
-                    )
-                elif str(past_result).startswith("FAILED | "):
-                    error_message = past_result.split(" | ")[1]
-                    clear_db_on_failure(hspm_version, uid)
-                    return JSONResponse(
-                        status_code=406,
-                        content={"statusCode": 406, "xml": "", "message": error_message}
-                    )
-                else:
-                    return JSONResponse(
-                        status_code=int(status),
-                        content={"statusCode": int(status),
-                                 "xml": signer.sign_doc(past_result),
-                                 "message": "Frames generated successfully!"}
-                    )
+def recommend_parameters(task_id, data):
 
-            db.insert_uid_with_none(uid)
+    recommender = get_recommender()
 
-        xml_string, status = main(data)
+    rop, bitrate, predicted_duration, status = recommender.recommend(data)
+    global TASKS
 
-        if xml_string:
-            with SQLHandler(hspm_version) as db:
-                db.update_xml_in_sqlite(uid, xml_string, status)
+    formatted = {
+        "recommendation": [
+            rop,
+            bitrate
+        ],
+        "expected_time": predicted_duration
+    }
 
-            return JSONResponse(
-                status_code=int(status),
-                content={"statusCode": int(status), "xml": signer.sign_doc(xml_string),
-                         "message": "Frame generated successfully!"}
-            )
-        else:
-            error_message = "Unable to build frames for your request. Please check compatibility!"
-            with SQLHandler(hspm_version) as db:
-                db.update_xml_in_sqlite(uid, f"FAILED | {error_message}", 406)
-            return JSONResponse(
-                status_code=406,
-                content={"statusCode": 406, "xml": "", "message": error_message}
-            )
-
-    except Exception as e:
-        logging.error(f"Error: {e}")
-        error_message = str(e)
-        if "the JSON object must be str, bytes or bytearray, not NoneType" in error_message:
-            error_message = "RTOF.json file didn't load correctly. Please check your input."
-        with SQLHandler(hspm_version) as db:
-            db.update_xml_in_sqlite(uid, f"FAILED | {error_message}", 406)
-        return JSONResponse(
-            status_code=406,
-            content={"statusCode": 406, "xml": "", "message": error_message}
-        )
-
-def clear_db_on_failure(db_name, uid):
-    with SQLHandler(db_name) as db:
-        db.remove_uid_from_db(uid)
+    TASKS[task_id] = {
+        "status": status,
+        "result": formatted
+    }
 
 
 @app.get("/", response_class=HTMLResponse)
 async def form_get(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request, "response": None})
+
+
+@app.get("/new-request", response_class=HTMLResponse)
+async def form_get(request: Request):
     return templates.TemplateResponse("form.html", {"request": request, "response": None})
 
 
-@app.post("/", response_class=HTMLResponse)
-async def form_post(
-    request: Request,
-    ROP: float = Form(None),
-    Bitrate: float = Form(None),
-    ToolCount: int = Form(None),
-    UID: str = Form(None),
+@app.post("/submit")
+async def submit_frame(
+    background_tasks: BackgroundTasks,
+    rop: float = Form(None),
+    bitrate: float = Form(None),
+    num_fsls: int = Form(None),
+    job_number: str = Form(None),
     json_file: UploadFile = File(None)
 ):
-    try:
-        if json_file:
-            contents = await json_file.read()
-            data = json.loads(contents)
+    data = {"ROP": rop, "Bitrate": bitrate, "num_fsls": num_fsls, "job_number": job_number}
 
-            # Override UID with JOB NUMBER from JSON
-            if "JOB NUMBER" in data:
-                UID = data["JOB NUMBER"]
-            data["uid"] = UID
+    if json_file:
+        contents = await json_file.read()
+        data = json.loads(contents)
 
-            # Override ToolCount with length of TOOLS array
-            if "TOOLS" in data and isinstance(data["TOOLS"], list):
-                ToolCount = len(data["TOOLS"])
-            data["ToolCount"] = ToolCount
+    #Saving user input to data file
+    for key, value in data.items():
+        if "fsl" in key and isinstance(data[key], dict):
+            value["ROP"] = rop
+            value["bitrate"] = bitrate
 
-            # Set ROP and Bitrate from form if provided, else keep from JSON
-            if ROP is not None:
-                data["ROP"] = ROP
-            if Bitrate is not None:
-                data["Bitrate"] = Bitrate
+    # Create background task
+    task_id = str(uuid.uuid4())
+    TASKS[task_id] = {"status": "processing", "result": None}
 
-            # Optionally, you can include hspm_version
-            if "hspm_version" not in data:
-                data["hspm_version"] = "v1"
+    background_tasks.add_task(process_frame, task_id, data)
 
-        else:
-            # If no JSON uploaded, use form values
-            data = {
-                "ROP": ROP,
-                "Bitrate": Bitrate,
-                "ToolCount": ToolCount,
-                "uid": UID,
-                "hspm_version": "v1"
-            }
+    # Redirect user to task status page
+    return RedirectResponse(url=f"/task/{task_id}", status_code=303)
 
-        # Send all data to backend
-        r = requests.post(BACKEND_URL, json=data)
-        backend_response = r.json()
 
-    except Exception as e:
-        backend_response = {"error": str(e)}
+@app.get("/task/{task_id}")
+async def task_status(task_id: str, request: Request):
+    return templates.TemplateResponse(
+        "processing.html",
+        {"request": request, "task_id": task_id}
+    )
+
+@app.get("/status/{task_id}")
+def get_status(task_id: str):
+    return TASKS.get(task_id, {"status": "not_found"})
+
+@app.get("/result/{task_id}")
+async def result_page(task_id: str, request: Request):
+    task = TASKS.get(task_id)
 
     return templates.TemplateResponse(
-        "form.html",
-        {"request": request, "response": backend_response}
+        "result_new.html",
+        {
+            "request": request,
+            "fsl_body": task.get("result", "<h1>No result available</h1>")
+        }
+    )
+
+
+@app.post("/recommend")
+async def get_recommended_parameters(
+    background_tasks: BackgroundTasks,
+    rop: float = Form(None),
+    bitrate: float = Form(None),
+    num_fsls: int = Form(None),
+    job_number: str = Form(None),
+    json_file: UploadFile = File(None)
+):
+    data = {"ROP": rop, "Bitrate": bitrate, "Num_FSLs": num_fsls, "job_number": job_number}
+
+    if json_file:
+        contents = await json_file.read()
+        json_data = json.loads(contents)
+
+    # Example: count tools
+    for key, value in json_data.items():
+        if "fsl" in key and isinstance(json_data[key], dict):
+            data["ToolCount"] = len(json.loads(value["TOOLS"]))
+            break
+
+    # Create background task
+    task_id = str(uuid.uuid4())
+    TASKS[task_id] = {"status": "processing", "result": None}
+
+    background_tasks.add_task(recommend_parameters, task_id, data)
+
+    # Return task ID (no redirect)
+    return JSONResponse({"task_id": task_id})
+
+
+@app.get("/analytics", response_class=HTMLResponse)
+async def analytics_get(request: Request):
+    analytics_metrics = r"C:\Users\nivankiv\git\goit_diploma_project\static\analytics\metrics.json"
+
+    # Load your metrics JSON
+    with open(analytics_metrics, "r") as f:
+        metrics = json.load(f)
+
+    # Folder for all chart images
+    chart_root = "/static/analytics/"
+
+    return templates.TemplateResponse(
+        "analytics.html",
+        {
+            "request": request,
+            "metrics": metrics,
+            "chart_root": chart_root
+        }
     )

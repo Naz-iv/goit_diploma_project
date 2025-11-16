@@ -1,0 +1,2727 @@
+{
+    "uid": "8000e010-bea2-4571-8de9-6af75ad915f9",
+    "job_number": "O.1011556.28",
+    "well_name": "BB-8",
+    "section_size": "6in",
+    "fsl1": {
+        "description": "image deep",
+        "bitrate": 40,
+        "rop": 100,
+        "nonorion_update": 3,
+        "orion_update": 6,
+        "R1_block": 2,
+        "R1_space": 100,
+        "R2_block": 2,
+        "R2_space": 200,
+        "R3_block": 2,
+        "R3_space": 300,
+        "min_bounds_pct": 10,
+        "max_bounds_pct": 50,
+        "max_dpoints": 165,
+        "mtf": [
+            {
+                "name": "AAD1_mx",
+                "datpid": 4959,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Anti-symmetrized directional ATT 100KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "AAD4_mx",
+                "datpid": 4961,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Anti-symmetrized directional ATT 400KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ADNSK_d",
+                "datpid": 5523,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Shock level",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ADNSTAT",
+                "datpid": 5501,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN4 real time status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "APD1_mx",
+                "datpid": 4958,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Anti-symmetrized directional PS 100KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "APD4_mx",
+                "datpid": 4960,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Anti-symmetrized directional PS 400KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "APRS_mx",
+                "datpid": 4944,
+                "length": 15,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Annulus Pressure",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ATEMP_mx",
+                "datpid": 4945,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Annulus Temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "AZIM_b",
+                "datpid": 3202,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Azimuth (continuous survey)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "CCRPM_b",
+                "datpid": 3233,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Control Collar Rpm",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "DCAV_d",
+                "datpid": 5543,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Average density caliper",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "DLNK_b",
+                "datpid": 3227,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Last Received Fast Downlink Command",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "DRHB_d",
+                "datpid": 5533,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Density correction bottom",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GRAPC_mx",
+                "datpid": 4943,
+                "length": 7,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Plateau Gamma Ray Average",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "Hres_DANG_mx",
+                "datpid": 4946,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "High Resolution Boundry oritentation from symmetrized directional",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "Hres_HANG_mx",
+                "datpid": 5052,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "High Resolution High Frequency Boundary Orientation",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "IH_TRGT_b",
+                "datpid": 3230,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Inclination Hold Target",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "IH_TURN_b",
+                "datpid": 3228,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Inclination Hold Turn Setting",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "INCL_b",
+                "datpid": 3201,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Inclination (continuous survey)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "LAT_STWD2_gvr",
+                "datpid": 6468,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Laterolog Extented RT Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "LTRPM_b",
+                "datpid": 3235,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Lower Torquer Rpm",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "MRES_gvr",
+                "datpid": 6340,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Mud Resisitivity",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "MXWP4STAT",
+                "datpid": 4907,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "4 inch Real Time status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_GRAVG_gvr",
+                "datpid": 6309,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "\"Compressed Natural Gamma Ray, Average\"",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_RBDA_gvr",
+                "datpid": 6406,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "\"Compressed Res Deep, Average\"",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_RBXA_gvr",
+                "datpid": 6419,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "\"Compressed Res eXtra Deep, Average\"",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_RTRD_gvr",
+                "datpid": 6432,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Compr. Res. Toroidal Receiver Deep",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_RTRX_gvr",
+                "datpid": 6433,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Compr. Res. Toroidal Receiver eXtra Deep",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD12B1_b",
+                "datpid": 3248,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 12-bit d-point #1",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD3B3_b",
+                "datpid": 3262,
+                "length": 3,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 3-bit d-point #3",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD6B1_b",
+                "datpid": 3251,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 6-bit d-point #1",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD6B2_b",
+                "datpid": 3252,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 6-bit d-point #2",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD6B3_b",
+                "datpid": 3253,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 6-bit d-point #3",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD6B4_b",
+                "datpid": 3254,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 6-bit d-point #4",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PERB_d",
+                "datpid": 5507,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN PEF (bottom)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "POSSUM_b",
+                "datpid": 3246,
+                "length": 7,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "\"PD Integral Control Term, PosSum\"",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PRDS_b",
+                "datpid": 3208,
+                "length": 4,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Demand Proportion",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PROPEFF_b",
+                "datpid": 3229,
+                "length": 4,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Effective Steering Proportion",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RESBIT_gvr",
+                "datpid": 6339,
+                "length": 10,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Bit Resistivity",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ROBB_d",
+                "datpid": 5538,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Bulk Density bottom",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT2_b",
+                "datpid": 3243,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Real Time Status Word #2",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT3_b",
+                "datpid": 3244,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Real Time Status Word #3",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT4_b",
+                "datpid": 3245,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Real Time Status Word #4",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT_b",
+                "datpid": 3205,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Real Time Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAD1_mx",
+                "datpid": 4952,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 100KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAD2_mx",
+                "datpid": 4978,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 2MHz 96 inch",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAD4_mx",
+                "datpid": 4954,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 400KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAS2_mx",
+                "datpid": 4980,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 2MHz 34 inch",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAS4_mx",
+                "datpid": 4956,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 400KHz 34",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHKLV_mx",
+                "datpid": 4922,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Shock level",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHKL_gvr",
+                "datpid": 6314,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Shock Level",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHKRSK_b",
+                "datpid": 3212,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Shock Risk",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHK_AMPL_b",
+                "datpid": 3242,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Shock Amplitude",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPD1_mx",
+                "datpid": 4951,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 100KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPD2_mx",
+                "datpid": 4977,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 2MHz 96 inch",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPD4_mx",
+                "datpid": 4953,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 400KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPS2_mx",
+                "datpid": 4979,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 2MHz 34 inch",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPS4_mx",
+                "datpid": 4955,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 400KHz 34",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "STWD_gvr",
+                "datpid": 6300,
+                "length": 7,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Tool Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TFDS_b",
+                "datpid": 3207,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Demand Tool face",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TF_b",
+                "datpid": 3217,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD ToolFace (GTF or MTF) low resolution",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TNRA_d",
+                "datpid": 5517,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Neutron Ratio (average)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "URSTWD_gvr",
+                "datpid": 6474,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "UHRI RT Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "UTRPM_b",
+                "datpid": 3234,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Upper Torquer Rpm",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ajamcnt",
+                "datpid": 4559,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Anti jam count since last recorded",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "di_temp",
+                "datpid": 4502,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse D&I mag temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ltbrt",
+                "datpid": 4563,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse LTB retry count",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "mtf",
+                "datpid": 4517,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Magnetic tool-face high resolution",
+                "time": 400.0,
+                "depth": null
+            },
+            {
+                "name": "rgx",
+                "datpid": 4504,
+                "length": 12,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Rotating Gravity's X component",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "rhx",
+                "datpid": 4507,
+                "length": 12,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Rotating Magnetic X component",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "shkrsk",
+                "datpid": 4501,
+                "length": 2,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Shock risk level",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "trpm",
+                "datpid": 4503,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Turbine rpm",
+                "time": null,
+                "depth": null
+            }
+        ],
+        "gtf": [
+            {
+                "name": "AAD1_mx",
+                "datpid": 4959,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Anti-symmetrized directional ATT 100KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "AAD4_mx",
+                "datpid": 4961,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Anti-symmetrized directional ATT 400KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ADNSK_d",
+                "datpid": 5523,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Shock level",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ADNSTAT",
+                "datpid": 5501,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN4 real time status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "APD1_mx",
+                "datpid": 4958,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Anti-symmetrized directional PS 100KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "APD4_mx",
+                "datpid": 4960,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Anti-symmetrized directional PS 400KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "APRS_mx",
+                "datpid": 4944,
+                "length": 15,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Annulus Pressure",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ATEMP_mx",
+                "datpid": 4945,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Annulus Temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "AZIM_b",
+                "datpid": 3202,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Azimuth (continuous survey)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "CCRPM_b",
+                "datpid": 3233,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Control Collar Rpm",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "DCAV_d",
+                "datpid": 5543,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Average density caliper",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "DLNK_b",
+                "datpid": 3227,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Last Received Fast Downlink Command",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "DRHB_d",
+                "datpid": 5533,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Density correction bottom",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GRAPC_mx",
+                "datpid": 4943,
+                "length": 7,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Plateau Gamma Ray Average",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "Hres_DANG_mx",
+                "datpid": 4946,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "High Resolution Boundry oritentation from symmetrized directional",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "Hres_HANG_mx",
+                "datpid": 5052,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "High Resolution High Frequency Boundary Orientation",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "IH_TRGT_b",
+                "datpid": 3230,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Inclination Hold Target",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "IH_TURN_b",
+                "datpid": 3228,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Inclination Hold Turn Setting",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "INCL_b",
+                "datpid": 3201,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Inclination (continuous survey)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "LAT_STWD2_gvr",
+                "datpid": 6468,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Laterolog Extented RT Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "LTRPM_b",
+                "datpid": 3235,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Lower Torquer Rpm",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "MRES_gvr",
+                "datpid": 6340,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Mud Resisitivity",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "MXWP4STAT",
+                "datpid": 4907,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "4 inch Real Time status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_GRAVG_gvr",
+                "datpid": 6309,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "\"Compressed Natural Gamma Ray, Average\"",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_RBDA_gvr",
+                "datpid": 6406,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "\"Compressed Res Deep, Average\"",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_RBXA_gvr",
+                "datpid": 6419,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "\"Compressed Res eXtra Deep, Average\"",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_RTRD_gvr",
+                "datpid": 6432,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Compr. Res. Toroidal Receiver Deep",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_RTRX_gvr",
+                "datpid": 6433,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Compr. Res. Toroidal Receiver eXtra Deep",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD12B1_b",
+                "datpid": 3248,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 12-bit d-point #1",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD3B3_b",
+                "datpid": 3262,
+                "length": 3,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 3-bit d-point #3",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD6B1_b",
+                "datpid": 3251,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 6-bit d-point #1",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD6B2_b",
+                "datpid": 3252,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 6-bit d-point #2",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD6B3_b",
+                "datpid": 3253,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 6-bit d-point #3",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD6B4_b",
+                "datpid": 3254,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 6-bit d-point #4",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PERB_d",
+                "datpid": 5507,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN PEF (bottom)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "POSSUM_b",
+                "datpid": 3246,
+                "length": 7,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "\"PD Integral Control Term, PosSum\"",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PRDS_b",
+                "datpid": 3208,
+                "length": 4,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Demand Proportion",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PROPEFF_b",
+                "datpid": 3229,
+                "length": 4,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Effective Steering Proportion",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RESBIT_gvr",
+                "datpid": 6339,
+                "length": 10,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Bit Resistivity",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ROBB_d",
+                "datpid": 5538,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Bulk Density bottom",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT2_b",
+                "datpid": 3243,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Real Time Status Word #2",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT3_b",
+                "datpid": 3244,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Real Time Status Word #3",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT4_b",
+                "datpid": 3245,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Real Time Status Word #4",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT_b",
+                "datpid": 3205,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Real Time Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAD1_mx",
+                "datpid": 4952,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 100KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAD2_mx",
+                "datpid": 4978,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 2MHz 96 inch",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAD4_mx",
+                "datpid": 4954,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 400KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAS2_mx",
+                "datpid": 4980,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 2MHz 34 inch",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAS4_mx",
+                "datpid": 4956,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 400KHz 34",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHKLV_mx",
+                "datpid": 4922,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Shock level",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHKL_gvr",
+                "datpid": 6314,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Shock Level",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHKRSK_b",
+                "datpid": 3212,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Shock Risk",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHK_AMPL_b",
+                "datpid": 3242,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Shock Amplitude",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPD1_mx",
+                "datpid": 4951,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 100KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPD2_mx",
+                "datpid": 4977,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 2MHz 96 inch",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPD4_mx",
+                "datpid": 4953,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 400KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPS2_mx",
+                "datpid": 4979,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 2MHz 34 inch",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPS4_mx",
+                "datpid": 4955,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 400KHz 34",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "STWD_gvr",
+                "datpid": 6300,
+                "length": 7,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Tool Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TFDS_b",
+                "datpid": 3207,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Demand Tool face",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TF_b",
+                "datpid": 3217,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD ToolFace (GTF or MTF) low resolution",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TNRA_d",
+                "datpid": 5517,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Neutron Ratio (average)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "URSTWD_gvr",
+                "datpid": 6474,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "UHRI RT Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "UTRPM_b",
+                "datpid": 3234,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Upper Torquer Rpm",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ajamcnt",
+                "datpid": 4559,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Anti jam count since last recorded",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "di_temp",
+                "datpid": 4502,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse D&I mag temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "gtf",
+                "datpid": 4518,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Gravity tool-face high resolution",
+                "time": 400.0,
+                "depth": null
+            },
+            {
+                "name": "ltbrt",
+                "datpid": 4563,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse LTB retry count",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "rgx",
+                "datpid": 4504,
+                "length": 12,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Rotating Gravity's X component",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "rhx",
+                "datpid": 4507,
+                "length": 12,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Rotating Magnetic X component",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "shkrsk",
+                "datpid": 4501,
+                "length": 2,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Shock risk level",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "trpm",
+                "datpid": 4503,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Turbine rpm",
+                "time": null,
+                "depth": null
+            }
+        ],
+        "rotary": [
+            {
+                "name": "AAD1_mx",
+                "datpid": 4959,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Anti-symmetrized directional ATT 100KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "AAD4_mx",
+                "datpid": 4961,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Anti-symmetrized directional ATT 400KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ADNSK_d",
+                "datpid": 5523,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Shock level",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ADNSTAT",
+                "datpid": 5501,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN4 real time status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "APD1_mx",
+                "datpid": 4958,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Anti-symmetrized directional PS 100KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "APD4_mx",
+                "datpid": 4960,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Anti-symmetrized directional PS 400KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "APRS_mx",
+                "datpid": 4944,
+                "length": 15,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Annulus Pressure",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ATEMP_mx",
+                "datpid": 4945,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Annulus Temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "AZIM_b",
+                "datpid": 3202,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Azimuth (continuous survey)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "CCRPM_b",
+                "datpid": 3233,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Control Collar Rpm",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "DCAV_d",
+                "datpid": 5543,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Average density caliper",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "DLNK_b",
+                "datpid": 3227,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Last Received Fast Downlink Command",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "DRHB_d",
+                "datpid": 5533,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Density correction bottom",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "DRHU_d",
+                "datpid": 5531,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Density correction up",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GRAPC_mx",
+                "datpid": 4943,
+                "length": 7,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Plateau Gamma Ray Average",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GRDN_ext_b",
+                "datpid": 3239,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Extended Gamma Ray Down",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GRLF_ext_b",
+                "datpid": 3238,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Extended Gamma Ray Left",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GRRT_ext_b",
+                "datpid": 3240,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Extended Gamma Ray Right",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "GRUP_ext_b",
+                "datpid": 3237,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Extended Gamma Ray Up",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "Hres_DANG_mx",
+                "datpid": 4946,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "High Resolution Boundry oritentation from symmetrized directional",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "Hres_HANG_mx",
+                "datpid": 5052,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "High Resolution High Frequency Boundary Orientation",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "IH_TRGT_b",
+                "datpid": 3230,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Inclination Hold Target",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "IH_TURN_b",
+                "datpid": 3228,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Inclination Hold Turn Setting",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "INCL_b",
+                "datpid": 3201,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Inclination (continuous survey)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "LAT_STWD2_gvr",
+                "datpid": 6468,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Laterolog Extented RT Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "LTRPM_b",
+                "datpid": 3235,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Lower Torquer Rpm",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "MRES_gvr",
+                "datpid": 6340,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Mud Resisitivity",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "MXWP4STAT",
+                "datpid": 4907,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "4 inch Real Time status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_GRAVG_gvr",
+                "datpid": 6309,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "\"Compressed Natural Gamma Ray, Average\"",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_RBDA_gvr",
+                "datpid": 6406,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "\"Compressed Res Deep, Average\"",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_RBXA_gvr",
+                "datpid": 6419,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "\"Compressed Res eXtra Deep, Average\"",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_RTRD_gvr",
+                "datpid": 6432,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Compr. Res. Toroidal Receiver Deep",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "O_RTRX_gvr",
+                "datpid": 6433,
+                "length": 16,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Compr. Res. Toroidal Receiver eXtra Deep",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PCNTSTCK_b",
+                "datpid": 3232,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Percent Time Stuck Below 5 RPM Indicator",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD12B1_b",
+                "datpid": 3248,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 12-bit d-point #1",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD3B3_b",
+                "datpid": 3262,
+                "length": 3,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 3-bit d-point #3",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD6B1_b",
+                "datpid": 3251,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 6-bit d-point #1",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD6B2_b",
+                "datpid": 3252,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 6-bit d-point #2",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD6B3_b",
+                "datpid": 3253,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 6-bit d-point #3",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PD6B4_b",
+                "datpid": 3254,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Generic 6-bit d-point #4",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PERB_d",
+                "datpid": 5507,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN PEF (bottom)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PERU_d",
+                "datpid": 5510,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN PEF (up)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "POSSUM_b",
+                "datpid": 3246,
+                "length": 7,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "\"PD Integral Control Term, PosSum\"",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PRDS_b",
+                "datpid": 3208,
+                "length": 4,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Demand Proportion",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PROPEFF_b",
+                "datpid": 3229,
+                "length": 4,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Effective Steering Proportion",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RESBIT_gvr",
+                "datpid": 6339,
+                "length": 10,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Bit Resistivity",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ROBB_d",
+                "datpid": 5538,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Bulk Density bottom",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ROBU_d",
+                "datpid": 5536,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Bulk Density up",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT2_b",
+                "datpid": 3243,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Real Time Status Word #2",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT3_b",
+                "datpid": 3244,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Real Time Status Word #3",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT4_b",
+                "datpid": 3245,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Real Time Status Word #4",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT_b",
+                "datpid": 3205,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Real Time Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAD1_mx",
+                "datpid": 4952,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 100KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAD2_mx",
+                "datpid": 4978,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 2MHz 96 inch",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAD4_mx",
+                "datpid": 4954,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 400KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAS2_mx",
+                "datpid": 4980,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 2MHz 34 inch",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SAS4_mx",
+                "datpid": 4956,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional ATT 400KHz 34",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHKLV_mx",
+                "datpid": 4922,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Shock level",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHKL_gvr",
+                "datpid": 6314,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Shock Level",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHKRSK_b",
+                "datpid": 3212,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Shock Risk",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SHK_AMPL_b",
+                "datpid": 3242,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Shock Amplitude",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPD1_mx",
+                "datpid": 4951,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 100KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPD2_mx",
+                "datpid": 4977,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 2MHz 96 inch",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPD4_mx",
+                "datpid": 4953,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 400KHz 96",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPS2_mx",
+                "datpid": 4979,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 2MHz 34 inch",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "SPS4_mx",
+                "datpid": 4955,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Symmetrized directional PS 400KHz 34",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "STKSLP_b",
+                "datpid": 3213,
+                "length": 4,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Stick Slip Amplitude and Frequency",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "STWD_gvr",
+                "datpid": 6300,
+                "length": 7,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Tool Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TFDS_b",
+                "datpid": 3207,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Demand Tool face",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TF_b",
+                "datpid": 3217,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD ToolFace (GTF or MTF) low resolution",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "TNRA_d",
+                "datpid": 5517,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN Neutron Ratio (average)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "URSTWD_gvr",
+                "datpid": 6474,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "UHRI RT Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "UTRPM_b",
+                "datpid": 3234,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Upper Torquer Rpm",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ajamcnt",
+                "datpid": 4559,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Anti jam count since last recorded",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "crpm",
+                "datpid": 4581,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Collar RPM",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "di_temp",
+                "datpid": 4502,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse D&I mag temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ltbrt",
+                "datpid": 4563,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse LTB retry count",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "nrpm",
+                "datpid": 4669,
+                "length": 1,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Negative RPM",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "rgx",
+                "datpid": 4504,
+                "length": 12,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Rotating Gravity's X component",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "rhx",
+                "datpid": 4507,
+                "length": 12,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Rotating Magnetic X component",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "shkrsk",
+                "datpid": 4501,
+                "length": 2,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Shock risk level",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "sticknslip",
+                "datpid": 4650,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Peak-Peak RPM variations - sticking indication",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "stuck",
+                "datpid": 4670,
+                "length": 2,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Percent time stuck below 5 RPM",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "trpm",
+                "datpid": 4503,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Turbine rpm",
+                "time": null,
+                "depth": null
+            }
+        ]
+    },
+    "fsl2": {
+        "description": "",
+        "bitrate": 6,
+        "rop": 100,
+        "nonorion_update": 1,
+        "orion_update": 6,
+        "R1_block": null,
+        "R1_space": null,
+        "R2_block": null,
+        "R2_space": null,
+        "R3_block": null,
+        "R3_space": null,
+        "min_bounds_pct": 10,
+        "max_bounds_pct": 50,
+        "max_dpoints": 165,
+        "mtf": [],
+        "gtf": [],
+        "rotary": []
+    },
+    "fsl3": {
+        "description": "",
+        "bitrate": 6,
+        "rop": 100,
+        "nonorion_update": 1,
+        "orion_update": 6,
+        "R1_block": null,
+        "R1_space": null,
+        "R2_block": null,
+        "R2_space": null,
+        "R3_block": null,
+        "R3_space": null,
+        "min_bounds_pct": 10,
+        "max_bounds_pct": 50,
+        "max_dpoints": 165,
+        "mtf": [],
+        "gtf": [],
+        "rotary": []
+    },
+    "fsl4": {
+        "description": "",
+        "bitrate": 6,
+        "rop": 100,
+        "nonorion_update": 1,
+        "orion_update": 6,
+        "R1_block": null,
+        "R1_space": null,
+        "R2_block": null,
+        "R2_space": null,
+        "R3_block": null,
+        "R3_space": null,
+        "min_bounds_pct": 10,
+        "max_bounds_pct": 50,
+        "max_dpoints": 165,
+        "mtf": [],
+        "gtf": [],
+        "rotary": []
+    },
+    "fsl5": {
+        "description": "",
+        "bitrate": 6,
+        "rop": 100,
+        "nonorion_update": 1,
+        "orion_update": 6,
+        "R1_block": null,
+        "R1_space": null,
+        "R2_block": null,
+        "R2_space": null,
+        "R3_block": null,
+        "R3_space": null,
+        "min_bounds_pct": 10,
+        "max_bounds_pct": 50,
+        "max_dpoints": 165,
+        "mtf": [],
+        "gtf": [],
+        "rotary": []
+    },
+    "fsl6": {
+        "description": "",
+        "bitrate": 6,
+        "rop": 100,
+        "nonorion_update": 1,
+        "orion_update": 6,
+        "R1_block": null,
+        "R1_space": null,
+        "R2_block": null,
+        "R2_space": null,
+        "R3_block": null,
+        "R3_space": null,
+        "min_bounds_pct": 10,
+        "max_bounds_pct": 50,
+        "max_dpoints": 165,
+        "mtf": [],
+        "gtf": [],
+        "rotary": []
+    },
+    "utility": {
+        "description": "image deep",
+        "bitrate": 40,
+        "rop": 100,
+        "utility": [
+            {
+                "name": "ADNSTAT",
+                "datpid": 5501,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 9,
+                "description": "ADN4 real time status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ESDT_mx",
+                "datpid": 4900,
+                "length": 11,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Time stamp for PESD",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "LAT_STWD2_gvr",
+                "datpid": 6468,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Laterolog Extented RT Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "MXWP4STAT",
+                "datpid": 4907,
+                "length": 6,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "4 inch Real Time status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PESD_mx",
+                "datpid": 4901,
+                "length": 13,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Hydrostatic pressure for ESD",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PMAT_mx",
+                "datpid": 4905,
+                "length": 11,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Time stamp for PMAX",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PMAX_mx",
+                "datpid": 4904,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Maximum pressure from PESD",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PMIN_mx",
+                "datpid": 4902,
+                "length": 9,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Minimum pressure from PESD",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "PMIT_mx",
+                "datpid": 4903,
+                "length": 11,
+                "is_mwd": false,
+                "ltb_addr": 19,
+                "description": "Time stamp for PMIN",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTSTAT_b",
+                "datpid": 3205,
+                "length": 12,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD Real Time Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "RTTOTSHK_b",
+                "datpid": 3231,
+                "length": 2,
+                "is_mwd": false,
+                "ltb_addr": 133,
+                "description": "PD RT Total Shock",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "STWD_gvr",
+                "datpid": 6300,
+                "length": 7,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "Tool Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "URSTWD_gvr",
+                "datpid": 6474,
+                "length": 8,
+                "is_mwd": false,
+                "ltb_addr": 157,
+                "description": "UHRI RT Status Word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ajamcnt",
+                "datpid": 4559,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Anti jam count since last recorded",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "curedt",
+                "datpid": 4668,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "EDT (Equivalent Drilling Time)",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "di_temp",
+                "datpid": 4502,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse D&I mag temperature",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "impmd",
+                "datpid": 4543,
+                "length": 3,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse operating mode",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "longfid",
+                "datpid": 4647,
+                "length": 10,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse long frame identifier",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "ltbrt",
+                "datpid": 4563,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse LTB retry count",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "mwdstat",
+                "datpid": 4500,
+                "length": 4,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse RT status word",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "survey_cnt_ck",
+                "datpid": 4697,
+                "length": 8,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Survey count with checksum",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "tfdis",
+                "datpid": 4536,
+                "length": 7,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Impulse Tool Face short in D&I frame",
+                "time": null,
+                "depth": null
+            },
+            {
+                "name": "totalshock",
+                "datpid": 4667,
+                "length": 2,
+                "is_mwd": true,
+                "ltb_addr": 137,
+                "description": "Total 50G shock level",
+                "time": null,
+                "depth": null
+            }
+        ]
+    },
+    "num_of_fsl": 5,
+    "odf_required": true,
+    "modf_required": false,
+    "provision_bha": false,
+    "ddr_bha": false,
+    "hspm_version": "RTDPointCatalog_2025_0.db",
+    "tools": [
+        {
+            "tool_id": "ADN4TOOL",
+            "display_name": "ADN4",
+            "ltb_addr": 9,
+            "is_mwd": false,
+            "dpoint_suffix": "_d",
+            "version": "9.5",
+            "size": "4.75",
+            "tr_spacing": null,
+            "rt_blocksize": null
+        },
+        {
+            "tool_id": "GVRTOOL",
+            "display_name": "MICROSCOPE",
+            "ltb_addr": 157,
+            "is_mwd": false,
+            "dpoint_suffix": "_gvr",
+            "version": "4.0",
+            "size": "4.75",
+            "tr_spacing": null,
+            "rt_blocksize": null
+        },
+        {
+            "tool_id": "IMPTOOL",
+            "display_name": "IMP",
+            "ltb_addr": 137,
+            "is_mwd": true,
+            "dpoint_suffix": "",
+            "version": "160",
+            "size": null,
+            "tr_spacing": null,
+            "rt_blocksize": null
+        },
+        {
+            "tool_id": "MXWPTOOL",
+            "display_name": "MXWP",
+            "ltb_addr": 19,
+            "is_mwd": false,
+            "dpoint_suffix": "_mx",
+            "version": "9.7",
+            "size": "4.75",
+            "tr_spacing": null,
+            "rt_blocksize": null
+        },
+        {
+            "tool_id": "PDTOOL",
+            "display_name": "PD",
+            "ltb_addr": 133,
+            "is_mwd": false,
+            "dpoint_suffix": "_b",
+            "version": "4.6",
+            "size": "4.75",
+            "tr_spacing": null,
+            "rt_blocksize": null
+        }
+    ],
+    "odf_frame": [
+        {
+            "name": "LTBToolID",
+            "datpid": 4544,
+            "length": 8,
+            "is_mwd": true,
+            "ltb_addr": 137,
+            "description": "Tool LTB Address for ODF",
+            "time": null,
+            "depth": null
+        },
+        {
+            "name": "survey_cnt_ck",
+            "datpid": 4697,
+            "length": 8,
+            "is_mwd": true,
+            "ltb_addr": 137,
+            "description": "Survey count with checksum",
+            "time": null,
+            "depth": null
+        }
+    ],
+    "modf_frame": [],
+    "dds_frame": []
+}

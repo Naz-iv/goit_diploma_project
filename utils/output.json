@@ -1,0 +1,19 @@
+{
+    "fsl1": {
+        "Parameters": {
+            "ROP": 100.0,
+            "Bit Rate": 40.0,
+            "SYNC Bits": 24,
+            "Max Dpoints": 165,
+            "Min Bounds Percent": 10,
+            "Max Bounds Percent": 50,
+            "ORION Update Rate": 6.0,
+            "NonORION Update Rate": 3.0,
+            "R1_block": 2.0,
+            "R1_space": 100.0,
+            "R2_block": 2.0,
+            "R2_space": 200.0,
+            "R3_block": 2.0,
+            "R3_space": 300.0
+        },
+        "rotary": 

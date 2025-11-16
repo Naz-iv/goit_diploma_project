@@ -47,7 +47,7 @@ class ParameterRecommender:
     # Рекомендовані парамтери для запиту
     def recommend(self, new_request: dict):
 
-        req_df = pd.DataFrame(new_request)
+        req_df = pd.DataFrame([new_request])
         req_df[self.feature_names] = req_df[self.feature_names].apply(pd.to_numeric, errors='coerce').fillna(0)
 
         # Визначаємо кластер
@@ -65,28 +65,16 @@ class ParameterRecommender:
 
         predicted_duration = None
         if self.rf_model:
-            predicted_duration = float(self.rf_model.predict(duration_row[self.feature_names])[0])
+            predicted_duration = round(float(self.rf_model.predict(duration_row[self.feature_names])[0]), 0)
 
-        return {
-            "cluster": cluster_label,
-            "recommended_parameters": recommended,
-            "predicted_duration": predicted_duration
-        }
+        return recommended["ROP"], recommended["Bitrate"], predicted_duration, "completed"
 
 
-
-if __name__ == "__main__":
-    db_file = r"C:\Users\nivankiv\git\frame-generator-project\Frame Requests.db"
-
+def get_recommender(
+        db_file:str = r"C:\Users\nivankiv\git\goit_diploma_project\Frame Requests.db"
+):
     recommender = ParameterRecommender(load_data(db_file))
     recommender.fit_clusters(n_clusters=4)
     recommender.fit_duration_model()
 
-    # приклад запиту
-    new_requests = [
-        {"ToolCount": 8, "Bitrate": 12, "ROP": 220, "Num_FSLs": 3},
-    ]
-
-    recommendations = recommender.recommend(new_requests)
-    for p, r in recommendations.items():
-        print(p, r)
+    return recommender

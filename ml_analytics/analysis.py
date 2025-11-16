@@ -15,11 +15,11 @@ def compute_metrics(df: pd.DataFrame) -> Dict[str, Any]:
         error_rate = round(df['Status'].str.lower().eq('error').mean() * 100, 2)
     avg_duration = None
     if "Duration" in df.columns:
-        avg_duration = float(np.nanmean(pd.to_numeric(df["Duration"], errors="coerce")))
+        avg_duration = round(float(np.nanmean(pd.to_numeric(df["Duration"], errors="coerce"))), 2)
 
     avg_tool_count = None
     if "ToolCount" in df.columns:
-        avg_tool_count = float(np.nanmean(pd.to_numeric(df["ToolCount"], errors="coerce")))
+        avg_tool_count = int(round(float(np.nanmean(pd.to_numeric(df["ToolCount"], errors="coerce"))), 0))
 
     most_common_tool = None
     if "Tools" in df.columns:

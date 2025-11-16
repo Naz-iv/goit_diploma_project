@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Frame Generator Analytics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            background: #2f3e9e;
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .header-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Dashboard container */
+        .dashboard {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Metrics cards */
+        .metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            flex: 1 1 200px;
+            max-width: 250px;
+            text-align: center;
+        }
+
+        .metric-card h3 {
+            margin: 0;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .metric-card p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2f3e9e;
+            margin-top: 5px;
+        }
+
+        /* Charts grid */
+        .charts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .chart-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .chart-card img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        .chart-card h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        #imgModal {
+            display: none; /* hidden by default */
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #imgModal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-title">Frame Generator</div>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+</header>
+
+<div class="dashboard">
+
+    <!-- Metrics -->
+    <div class="metrics">
+        <div class="metric-card">
+            <h3>Total Requests</h3>
+            <p id="total_requests">{{ metrics.total_requests }}</p>
+        </div>
+        <div class="metric-card">
+            <h3>Success Rate (%)</h3>
+            <p id="success_rate_pct">{{ metrics.success_rate_pct }}</p>
+        </div>
+        <div class="metric-card">
+            <h3>Error Rate (%)</h3>
+            <p id="error_rate_pct">{{ metrics.error_rate_pct }}</p>
+        </div>
+        <div class="metric-card">
+            <h3>Avg Duration (min)</h3>
+            <p id="avg_duration_min">{{ metrics.avg_duration_min }}</p>
+        </div>
+        <div class="metric-card">
+            <h3>Avg Tool Count</h3>
+            <p id="avg_tool_count">{{ metrics.avg_tool_count }}</p>
+        </div>
+        <div class="metric-card">
+            <h3>Most Common Device</h3>
+            <p id="most_common_device">{{ metrics.most_common_device | join(", ") }}</p>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts">
+        <div class="chart-card">
+            <h4>Chart 1</h4>
+            <img src="{{ chart_root }}requests_over_time.png" alt="Chart 1">
+        </div>
+        <div class="chart-card">
+            <h4>Chart 2</h4>
+            <img src="{{ chart_root }}device_distribution.png" alt="Chart 2">
+        </div>
+        <div class="chart-card">
+            <h4>Chart 3</h4>
+            <img src="{{ chart_root }}duration_histogram.png" alt="Chart 3">
+        </div>
+        <div class="chart-card">
+            <h4>Chart 4</h4>
+            <img src="{{ chart_root }}duration_histogram.png" alt="Chart 4">
+        </div>
+        <div class="chart-card">
+            <h4>Chart 5</h4>
+            <img src="{{ chart_root }}duration_histogram.png" alt="Chart 5">
+        </div>
+        <div class="chart-card">
+            <h4>Chart 6</h4>
+            <img src="{{ chart_root }}clusters_pie.png" alt="Chart 6">
+        </div>
+        <div class="chart-card">
+            <h4>Chart 7</h4>
+            <img src="{{ chart_root }}clusters_pie_cluster_0_radar.png" alt="Chart 7">
+        </div>
+        <div class="chart-card">
+            <h4>Chart 8</h4>
+            <img src="{{ chart_root }}clusters_pie_cluster_1_radar.png" alt="Chart 8">
+        </div>
+         <div class="chart-card">
+            <h4>Chart 9</h4>
+            <img src="{{ chart_root }}clusters_pie_cluster_2_radar.png" alt="Chart 9">
+        </div>
+        <div class="chart-card">
+            <h4>Chart 10</h4>
+            <img src="{{ chart_root }}clusters_pie_cluster_3_radar.png" alt="Chart 10">
+        </div>
+    </div>
+
+</div>
+
+<!-- Fullscreen image modal -->
+<div id="imgModal">
+    <img id="modalImg" src="">
+</div>
+
+</body>
+<script>
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+
+// Select all chart images
+document.querySelectorAll(".chart-card img").forEach(img => {
+    img.addEventListener("click", () => {
+        // Show modal
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+    });
+});
+
+// Click on modal image or background to close
+modal.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalImg.src = "";
+});
+</script>
+
+</html>

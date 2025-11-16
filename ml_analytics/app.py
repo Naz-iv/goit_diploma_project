@@ -5,13 +5,13 @@ import json
 from pathlib import Path
 
 def main():
-    root_dir = Path(__file__).resolve().parent
+    root_dir = Path(__file__).resolve().parent.parent
 
-    outdir = root_dir / "output"
+    outdir = root_dir / "static" / "analytics"
 
     outdir.mkdir(parents=True, exist_ok=True)
 
-    df = load_data(r"C:\Users\nivankiv\git\frame-generator-project\Frame Requests.db")
+    df = load_data(r"C:\Users\nivankiv\git\goit_diploma_project\Frame Requests.db")
     df = perform_clustering_with_feature_importance(df, n_clusters=4)
     metrics = compute_metrics(df)
 

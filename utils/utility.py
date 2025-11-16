@@ -4,11 +4,16 @@ import re
 import os
 
 from dataclasses import asdict, is_dataclass
+
+from pyspark.sql.connect.dataframe import DataFrame
+
+from frame_builder.process_output.process_frame import add_time_column, get_update_rates
+from frame_builder.process_output.process_html import output_html
 from models import models
 from typing import List
 
 from utils.export_to_fbw import convert_to_xml
-from frame_builder import build_frames_from_json
+from frame_builder.build_frames_from_json import build_frames_from_json
 from utils.db_managment import SQLHandler
 from frame_library import FRAME_LIBRATY
 from hspm_version_mapper import HSPM_VERSION_MAP
@@ -613,50 +618,18 @@ def update_utility(utility_frame: models.UTILITY, dpoint_list: list, tools: list
     return utility_frame
 
 
-def main(data: dict) -> tuple:
-    """
-    Generates a frame request for given data input and processes the request through multiple
-    steps including validation, frame generation, error handling, and database updates.
+def compile_html(frames: DataFrame):
+    return '<br>'.join(fsl["html"] for fsl in frames.values() if "html" in fsl.keys())
 
-    Parameters
-    ----------
-    data : dict
-        The input data containing configuration details and attributes for the frame request.
-        This includes job metadata, well details, tool information, and frame-specific settings.
 
-    Returns
-    -------
-    str
-        The serialized XML string representation of the generated and processed frame request.
+def request_frames(data: dict) -> tuple:
 
-    Raises
-    ------
-    ValueError
-        If frame generation fails due to incompatible parameters or tool configurations.
+    # os.makedirs("requests", exist_ok=True)
+    # save_path = f"requests/{'no_uid'}.json"
+    # with open(save_path, "w") as f:
+    #     json.dump(data, f, indent=2)
 
-    Notes
-    -----
-    The function performs the following key steps:
-    1. Tool and feature extraction: Processes tool data based on input details, extracting tool
-       lists and relevant features required for the frame request.
-    2. Request object setup: Constructs an instance of FRAME_REQUEST populated with provided
-       and derived inputs.
-    3. Conditional processing: Handles specific properties of the frame request (e.g., ODF, MODF)
-       based on respective feature requirements across available tools.
-    4. File operations: Writes the frame request to an input JSON file and saves the processing
-       output as an output JSON file.
-    5. Validation and error handling: Extracts and processes errors, either handling them internally
-       or raising appropriate exceptions for further troubleshooting.
-    6. XML conversion and database update: Converts the configured frame request object into XML
-       format and updates it in the database for permanent storage.
-
-    Examples
-    --------
-    Usage of this function requires valid configurations for `data`. An exception is raised
-    if the frame generator encounters critical errors that cannot be auto-resolved.
-    """
-    logging.info("Processing tools information")
-    tools = get_tools_list(get_frameset_tools(data), float(data.get("section_size").rstrip("in")))   
+    tools = get_tools_list(get_frameset_tools(data), float(data.get("section_size").rstrip("in")))
     mwd_tool = next((tool for tool in tools if tool.is_mwd), None)
     if not mwd_tool:
         logging.info("No MWD tool in frame request")
@@ -738,86 +711,67 @@ def main(data: dict) -> tuple:
                 break
     logging.info("MODF added OK")
 
-    input_file = os.path.join(os.getcwd(), f"input.json")
 
-    with open(input_file, "w") as file:
-        json.dump(asdict(frame_request), file, indent=4)
 
     logging.info("Sent request to frame generator")
 
     # Frame generator
-    frame_generator_output, errors = build_frames_from_json(asdict(frame_request))
+    frames, errors = build_frames_from_json(asdict(frame_request))
 
     logging.info("Frames generated")
-
-    output_file = os.path.join(os.getcwd(), f"output.json")
-
-    with open(output_file, "w") as file:
-        json.dump(frame_generator_output, file, indent=4)
 
     #TODO: Update error handling to mention which FSLs failed to build to make it easy for users to re-submit
     errors = {fsl: msg for fsl, sub_dict in errors.items() for msg in sub_dict.values() if msg}
 
     logging.info("Checking for errors")
 
-    status = 200
+    for frame_name, frame in frames.items():
+        frame_parameters = frame["Parameters"]
+        update_rates = {}
+
+        if frame_name != "utility":
+            keys_to_extract = ["rotary", "mtf", "gtf"]
+            df = {k: frame.get(k) for k in keys_to_extract}
+
+            if isinstance(df["gtf"], list):
+                df["gtf"] = df["mtf"]
+            if df["rotary"]["Bits"].sum() < 25:
+                continue
+
+            for _, f in df.items():
+                # Add Time column to frames
+                add_time_column(f, frame_parameters["Bit Rate"])
+
+                update_rates[frame_name] = get_update_rates(
+                    f, frame_parameters["Bit Rate"], frame_parameters["ROP"]
+                )
+
+        else:
+            keys_to_extract = ["utility"]
+            df = {k: frame.get(k) for k in keys_to_extract}
+
+            add_time_column(df["utility"], frame_parameters["Bit Rate"])
+
+            update_rates[frame_name] = get_update_rates(
+                df["utility"], frame_parameters["Bit Rate"], frame_parameters["ROP"]
+            )
+
+        frame["html"] = output_html(df, update_rates, frame["Parameters"])
 
     if not errors:
-        fsl1 = frame_generator_output.get("fsl1")
-        if fsl1:
-            if fsl1.get("Parameters").get("ROP") != frame_request.fsl1.rop:
-                status = 209
-            frame_request.fsl1 = update_fsl(frame_request.fsl1, fsl1, tools)
-        
-        fsl2 = frame_generator_output.get("fsl2")
-        if fsl2:
-            if fsl2.get("Parameters").get("ROP") != frame_request.fsl2.rop:
-                status = 209
-            frame_request.fsl2 = update_fsl(frame_request.fsl2, fsl2, tools)
-        
-        fsl3 = frame_generator_output.get("fsl3")
-        if fsl3:
-            if fsl3.get("Parameters").get("ROP") != frame_request.fsl3.rop:
-                status = 209
-            frame_request.fsl3 = update_fsl(frame_request.fsl3, fsl3, tools)
-        
-        fsl4 = frame_generator_output.get("fsl4")
-        if fsl4:
-            if fsl4.get("Parameters").get("ROP") != frame_request.fsl4.rop:
-                status = 209
-            frame_request.fsl4 = update_fsl(frame_request.fsl4, fsl4, tools)
-        
-        fsl5 = frame_generator_output.get("fsl5")
-        if fsl5:
-            if fsl5.get("Parameters").get("ROP") != frame_request.fsl5.rop:
-                status = 209
-            frame_request.fsl5 = update_fsl(frame_request.fsl5, fsl5, tools)
-        
-        fsl6 = frame_generator_output.get("fsl6")
-        if fsl6:
-            if fsl6.get("Parameters").get("ROP") != frame_request.fsl6.rop:
-                status = 209
-            frame_request.fsl6 = update_fsl(frame_request.fsl6, fsl6, tools)
-        
-        utility = frame_generator_output.get("utility", {}).get("utility")
-        if utility:
-            frame_request.utility = update_utility(frame_request.utility, utility, tools)
+        status = "completed"
     else:
-        failed_to_build = [f'{fsl.upper()}: {msg}' for fsl, msg in errors.items()]
-        tool_not_compatible = [msg for fsl, msg in errors.items() if 'Rules for ' in msg]
+        status = "fail"
 
-        if failed_to_build:
-            raise ValueError('\n'.join(failed_to_build))
-        elif tool_not_compatible:
-            raise ValueError(f"{tool_not_compatible[0].split(' (no ')[0]}. Tool is not compatible with Frame Generator.")
-        else:
-            raise ValueError(f"{' | '.join([f'{fsl.upper()} - {msg}'for fsl, msg in errors.items()])}")
 
-    xml_string = convert_to_xml(frame_request)
-    
-    logging.info("Frames converted to xml")
+    return compile_html(frames), status
 
-    with SQLHandler(hspm_version) as db:
-        db.update_xml_in_sqlite(data.get("uid"), xml_string, status)
-        
-    return xml_string, status
+
+if __name__=="__main__":
+
+    json_path = r"C:\Users\nivankiv\git\goit_diploma_project\O.1234567.01_TBK-B6_16_2025-10-27_13-01request_data.json"
+    with open(json_path, "r") as f:
+        data = json.load(f)
+
+    result = request_frames(data)
+    print(result)
